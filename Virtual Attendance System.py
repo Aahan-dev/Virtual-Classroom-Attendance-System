@@ -30,3 +30,43 @@ class AttendanceSystem:
         for student, records in self.attendance.items():
             print(f"{student}: {', '.join(records)}")  # Print each student's attendance
 
+def main():# The main function is the entry point of the program.
+    
+    attendance_system = AttendanceSystem()  # Create an instance of the AttendanceSystem
+
+
+    while True: # The program enters a loop that allows the user to perform various actions.
+        print("\nVirtual Classroom Attendance System")
+        print("1. Add Student")
+        print("2. Mark Attendance")
+        print("3. View Attendance Records")
+        print("4. Exit")
+
+
+        choice = input("Choose an option: ")
+
+
+        if choice == '1':
+            student_name = input("Enter the student's name: ")
+            attendance_system.add_student(student_name)  # Add a new student
+
+
+        elif choice == '2':
+            attendance_system.mark_attendance()  # Mark attendance for students
+
+
+        elif choice == '3':
+            attendance_system.view_attendance()  # View attendance records
+
+
+        elif choice == '4':
+            print("Exiting the Attendance System. Goodbye!")
+            break  # Exit the loop
+
+
+        else:
+            print("Invalid option. Please choose again.")
+
+
+if __name__ == "__main__":
+    main()  # Run the main function
